@@ -130,21 +130,39 @@
 }
 
 /* ===== Flippable Project Cards ===== */
+/* Make sure nothing in the ancestor chain clips the 3D flip */
+#projects,
+#projects .container,
+#projects .row,
+#projects .portfolio-content,
+#projects .portfolio-container,
+.portfolio-grid.three-columns,
+.portfolio-grid.three-columns figure.item {
+  overflow: visible !important;
+}
 .portfolio-grid.three-columns figure.item {
   background: transparent;
   padding: 0;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 .portfolio-grid .col {
-  perspective: 1200px;
+  perspective: 1400px;
+  -webkit-perspective: 1400px;
   height: 270px;
   cursor: pointer;
+  outline: none;
 }
 .portfolio-grid .project-container {
   position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform .25s ease;
+}
+.portfolio-grid .col:hover .project-container,
+.portfolio-grid .col.hover .project-container {
+  transform: translateY(-6px);
 }
 .portfolio-grid .project-container .front,
 .portfolio-grid .project-container .back {
@@ -152,8 +170,9 @@
   inset: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  border-radius: 10px;
-  transition: transform .6s cubic-bezier(.4,.2,.2,1);
+  border-radius: 12px;
+  transition: transform .85s cubic-bezier(.23,1,.32,1);
+  will-change: transform;
 }
 .portfolio-grid .project-container .front {
   background-size: cover;
@@ -161,12 +180,17 @@
   transform: rotateY(0deg);
   z-index: 2;
   overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0,0,0,.45);
+}
+.portfolio-grid .col:hover .front,
+.portfolio-grid .col.hover .front {
+  box-shadow: 0 18px 44px rgba(0,255,255,.28), 0 0 0 1px rgba(0,255,255,.35);
 }
 .portfolio-grid .project-container .front::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.4) 55%, rgba(0,0,0,.12) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,.14) 100%);
 }
 .portfolio-grid .project-container .front .inner {
   position: relative;
@@ -179,19 +203,26 @@
   text-align: center;
 }
 .portfolio-grid .project-container .front .inner p {
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   margin: 0 0 6px;
   font-size: 1rem;
   line-height: 1.3;
+  text-shadow: 0 0 6px rgba(255,255,255,.55), 0 0 16px rgba(0,255,255,.4), 0 2px 6px rgba(0,0,0,.9);
+  transition: text-shadow .4s ease;
+}
+.portfolio-grid .col:hover .inner p,
+.portfolio-grid .col.hover .inner p {
+  text-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 26px rgba(0,255,255,.65), 0 2px 6px rgba(0,0,0,.9);
 }
 .portfolio-grid .project-container .front .inner span {
-  color: #d7d7e6;
+  color: #e8e8f4;
   font-size: .78rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,.8);
 }
 .portfolio-grid .project-container .back {
   background: #12162b;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(0,255,255,0.18);
   color: #fff;
   transform: rotateY(180deg);
   display: flex;
@@ -199,6 +230,7 @@
   justify-content: center;
   padding: 18px;
   overflow-y: auto;
+  box-shadow: 0 10px 28px rgba(0,0,0,.5);
 }
 .portfolio-grid .project-container .back .portfolio-links {
   margin-bottom: 10px;
@@ -208,13 +240,20 @@
   color: #00ffff;
   font-size: 1.15rem;
   margin: 0 8px;
+  text-shadow: 0 0 10px rgba(0,255,255,.6);
+  transition: text-shadow .25s ease, transform .25s ease;
+  display: inline-block;
+}
+.portfolio-grid .project-container .back .portfolio-links a:hover {
+  text-shadow: 0 0 16px rgba(0,255,255,.95);
+  transform: translateY(-2px);
 }
 .portfolio-grid .project-container .back .list ul {
   padding-left: 18px;
   margin: 0;
   font-size: .76rem;
   line-height: 1.42;
-  color: #dcdce8;
+  color: #eaeaf4;
   text-align: left;
 }
 .portfolio-grid .col:hover .front,
@@ -237,6 +276,7 @@
 </style>
  
 </head>
+
 
 <body>
   <!-- Animated Background -->
@@ -1692,6 +1732,21 @@
 
   <script src="js/validator.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Reliable flip trigger: JS-driven class toggle backs up CSS :hover so the -->
+  <!-- flip never gets stuck mid-animation when the pointer crosses the 3D edge -->
+  <script>
+  (function () {
+    var cols = document.querySelectorAll('.portfolio-grid .col');
+    cols.forEach(function (col) {
+      col.addEventListener('mouseenter', function () { col.classList.add('hover'); });
+      col.addEventListener('mouseleave', function () { col.classList.remove('hover'); });
+      col.addEventListener('focus', function () { col.classList.add('hover'); });
+      col.addEventListener('blur', function () { col.classList.remove('hover'); });
+      col.setAttribute('tabindex', '0');
+    });
+  })();
+  </script>
 
 
 </body></html>
