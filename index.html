@@ -192,7 +192,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,.14) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,.35) 75%, rgba(0,0,0,.75) 100%);
 }
 .portfolio-grid .project-container .front .inner {
   position: relative;
@@ -234,9 +234,13 @@
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+    justify-content: flex-start;
+  justify-content: safe center;
   padding: 20px;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   box-shadow: 0 10px 30px rgba(0,0,0,.6), inset 0 0 40px rgba(0,255,255,.03);
 }
 /* Reset any inherited tag-level styling from main.css so nothing
@@ -958,7 +962,7 @@
 
                       <!-- Video-Based Traffic Conflict Analysis -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/projects/traffic.jpg);">
                               <div class="inner">
@@ -984,7 +988,7 @@
 
                       <!-- Hybrid Explainable Anomaly Detection for 6G Network Slicing -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Research"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/projects/network6g.jpg);">
                               <div class="inner">
@@ -1010,7 +1014,7 @@
 
                       <!-- GetFit -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/projects/yoga.jpg);">
                               <div class="inner">
@@ -1035,7 +1039,7 @@
 
                       <!-- Visual Image Similarity Search Engine -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/projects/similarity.jpg);">
                               <div class="inner">
@@ -1060,7 +1064,7 @@
 
                       <!-- Analysis & Visualization of Renewable Resource Data -->
                       <figure class="item standard" data-groups='["category_all", "Data"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/projects/data_analytics.jpg);">
                               <div class="inner">
@@ -1085,7 +1089,7 @@
 
                       <!-- Truck Delivery Profit Optimization -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/projects/truck.jpg);">
                               <div class="inner">
@@ -1110,7 +1114,7 @@
 
                       <!-- EDA Amazon Dataset -->
                       <figure class="item standard" data-groups='["category_all", "Data"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/projects/amazon_eda.jpg);">
                               <div class="inner">
@@ -1136,7 +1140,7 @@
 
                       <!-- Soil MIR Spectroscopy — USSN v2 -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Research"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#1c2140,#2d1b4e);">
                               <div class="project-front-gradient"><i class="fas fa-leaf" style="font-size:56pt;color:rgba(145,94,255,.55);"></i></div>
@@ -1163,7 +1167,7 @@
 
                       <!-- VeritasAI -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#241a3a,#3a1c3f);">
                               <div class="project-front-gradient"><i class="fas fa-shield-halved" style="font-size:56pt;color:rgba(242,114,200,.55);"></i></div>
@@ -1190,7 +1194,7 @@
 
                       <!-- TrueCandidate -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/truecandidate.jpg);">
                               <div class="inner">
@@ -1215,7 +1219,7 @@
 
                       <!-- InsightPulse -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#1a2438,#1c2140);">
                               <div class="project-front-gradient"><i class="fas fa-comments" style="font-size:56pt;color:rgba(94,145,255,.55);"></i></div>
@@ -1243,7 +1247,7 @@
 
                       <!-- Insurance-Renewal Voice Agent -->
                       <figure class="item standard" data-groups='["category_all", "Full Stack", "AI/ML"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/insurance-renewal.jpg);">
                               <div class="inner">
@@ -1268,7 +1272,7 @@
 
                       <!-- PediTriage -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#1a2438,#2a1a3a);">
                               <div class="project-front-gradient"><i class="fas fa-heart-pulse" style="font-size:56pt;color:rgba(94,145,255,.55);"></i></div>
@@ -1295,7 +1299,7 @@
 
                       <!-- GAF-Net -->
                       <figure class="item standard" data-groups='["category_all", "Research", "AI/ML"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#2a1a3a,#1c2140);">
                               <div class="project-front-gradient"><i class="fas fa-circle-user" style="font-size:56pt;color:rgba(145,94,255,.55);"></i></div>
@@ -1322,7 +1326,7 @@
 
                       <!-- Pan-Cancer Multi-Omics Survival Prediction -->
                       <figure class="item standard" data-groups='["category_all", "Research", "Data"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#1c2140,#241a3a);">
                               <div class="project-front-gradient"><i class="fas fa-dna" style="font-size:56pt;color:rgba(242,114,200,.55);"></i></div>
@@ -1349,7 +1353,7 @@
 
                       <!-- SoilPFN -->
                       <figure class="item standard" data-groups='["category_all", "Research"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/soilpfn.jpg);">
                               <div class="inner">
@@ -1374,7 +1378,7 @@
 
                       <!-- The Pitch Visualizer -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Full Stack"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#241a3a,#1c2140);">
                               <div class="project-front-gradient"><i class="fas fa-image" style="font-size:56pt;color:rgba(145,94,255,.55);"></i></div>
@@ -1400,7 +1404,7 @@
 
                       <!-- VaultAI -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Full Stack"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#1c2140,#1a2438);">
                               <div class="project-front-gradient"><i class="fas fa-lock" style="font-size:56pt;color:rgba(94,145,255,.55);"></i></div>
@@ -1427,7 +1431,7 @@
 
                       <!-- Sports Tracker -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Data"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background:linear-gradient(135deg,#1a2438,#241a3a);">
                               <div class="project-front-gradient"><i class="fas fa-trophy" style="font-size:56pt;color:rgba(242,114,200,.55);"></i></div>
@@ -1453,7 +1457,7 @@
 
                       <!-- LinkedIn JobRadar -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous"]'>
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="col" ontouchstart="handlePortfolioTouch(event, this)">
                           <div class="project-container">
                             <div class="front" style="background-image:url(images/jobradar.jpg);">
                               <div class="inner">
@@ -1818,7 +1822,7 @@
 
   <!-- Reliable flip trigger: JS-driven class toggle backs up CSS :hover so the -->
   <!-- flip never gets stuck mid-animation when the pointer crosses the 3D edge -->
-  <script>
+   <script>
   (function () {
     var cols = document.querySelectorAll('.portfolio-grid .col');
     cols.forEach(function (col) {
@@ -1829,6 +1833,18 @@
       col.setAttribute('tabindex', '0');
     });
   })();
+
+  // Once a card is flipped open, a tap inside .back should scroll
+  // or hit a link — not re-flip the card. Only taps on the front
+  // face (or on an already-closed card) toggle the flip.
+  function handlePortfolioTouch(e, col) {
+    var isOpen = col.classList.contains('hover');
+    var touchedBack = !!(e.target && e.target.closest && e.target.closest('.back'));
+    if (isOpen && touchedBack) {
+      return;
+    }
+    col.classList.toggle('hover');
+  }
   </script>
 
 
