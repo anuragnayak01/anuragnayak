@@ -32,7 +32,102 @@
   to { background-position: 200% center; }
 }
 
-
+/* ===== Certifications section ===== */
+.cert-section-title h2 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.cert-section-title hr {
+  border: none;
+  height: 2px;
+  width: 60px;
+  background: linear-gradient(90deg, #00ffff, transparent);
+  margin: 10px 0 30px;
+}
+.cert-category-heading {
+  color: #00ffff;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+.cert-category-heading.green {
+  color: #7CFC9C;
+}
+.cert-scroll-hint {
+  color: #9aa0ac;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+.cert-scroll-track {
+  display: flex;
+  overflow-x: auto;
+  gap: 18px;
+  padding-bottom: 14px;
+  scrollbar-width: thin;
+}
+.cert-scroll-track::-webkit-scrollbar {
+  height: 6px;
+}
+.cert-scroll-track::-webkit-scrollbar-thumb {
+  background: rgba(0,255,255,0.4);
+  border-radius: 4px;
+}
+.cert-card {
+  flex: 0 0 220px;
+  display: block;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,255,255,0.5);
+}
+.cert-card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  background: #1c2140;
+}
+.cert-card-img-placeholder {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg,#1c2140,#2d1b4e);
+  color: rgba(0,255,255,0.55);
+  font-size: 34pt;
+}
+.cert-card-body {
+  padding: 10px 12px;
+}
+.cert-card-body h5 {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+.cert-meta {
+  color: #9aa0ac;
+  font-size: 0.8rem;
+}
+.cert-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  border-radius: 12px;
+  background: rgba(0,255,255,0.15);
+  color: #00ffff;
+}
+.cert-badge.green {
+  background: rgba(124,252,156,0.15);
+  color: #7CFC9C;
+}
 </style>
  
 </head>
@@ -88,6 +183,12 @@
             <a href="#projects" class="nav-anim">
               <span class="menu-icon lnr lnr-briefcase"></span>
               <span class="link-text">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="#certifications" class="nav-anim">
+              <span class="menu-icon lnr lnr-star"></span>
+              <span class="link-text">Certifications</span>
             </a>
           </li>
           <li>
@@ -303,235 +404,6 @@
               </div>
               <!-- End of Services -->
 
-              <!-- <div class="white-space-30"></div> 
-
-                <! Testimonials -->
-              <!-- <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="block-title">
-                      <h3>Testimonials</h3>
-                    </div>
-                  </div>
-                </div> -->
-
-              <!-- <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="testimonials owl-carousel"> -->
-              <!-- Testimonial 1 -->
-              <!-- <div class="testimonial">
-                        <div class="img">
-                          <img
-                            src="img/testimonials/testimonial-1.jpg"
-                            alt="Hardik Mittal"
-                          />
-                        </div>
-                        <div class="text">
-                          <p>
-                            Vivamus at molestie dui, eu ornare orci. Curabitur
-                            vel egestas dolor. Nulla condimentum nunc sit amet
-                            urna tempus finibus. Duis mollis leo id ligula
-                            pellentesque, at vehicula dui ultrices.
-                          </p>
-                        </div>
-
-                        <div class="author-info">
-                          <h4 class="author">Julia Hickman</h4>
-                          <h5 class="company">Omni Source</h5>
-                          <div class="icon">
-                            <i class="fas fa-quote-right"></i>
-                          </div>
-                        </div>
-                      </div> -->
-              <!-- End of Testimonial 1 -->
-
-              <!-- Testimonial 2 -->
-              <!-- <div class="testimonial">
-                        <div class="img">
-                          <img
-                            src="img/testimonials/testimonial-2.jpg"
-                            alt="Hardik Mittal"
-                          />
-                        </div>
-                        <div class="text">
-                          <p>
-                            Vivamus at molestie dui, eu ornare orci. Curabitur
-                            vel egestas dolor. Nulla condimentum nunc sit amet
-                            urna tempus finibus. Duis mollis leo id ligula
-                            pellentesque, at vehicula dui ultrices.
-                          </p>
-                        </div>
-
-                        <div class="author-info">
-                          <h4 class="author">Robert Watkins</h4>
-                          <h5 class="company">Endicott Shoes</h5>
-                          <div class="icon">
-                            <i class="fas fa-quote-right"></i>
-                          </div>
-                        </div>
-                      </div> -->
-              <!-- End of Testimonial 2 -->
-
-              <!-- Testimonial 3 -->
-              <!-- <div class="testimonial">
-                        <div class="img">
-                          <img
-                            src="img/testimonials/testimonial-3.jpg"
-                            alt="Hardik Mittal"
-                          />
-                        </div>
-                        <div class="text">
-                          <p>
-                            Vivamus at molestie dui, eu ornare orci. Curabitur
-                            vel egestas dolor. Nulla condimentum nunc sit amet
-                            urna tempus finibus. Duis mollis leo id ligula
-                            pellentesque, at vehicula dui ultrices.
-                          </p>
-                        </div>
-
-                        <div class="author-info">
-                          <h4 class="author">Kristin Carroll</h4>
-                          <h5 class="company">Helping Hand</h5>
-                          <div class="icon">
-                            <i class="fas fa-quote-right"></i>
-                          </div>
-                        </div>
-                      </div>
-                      < End of Testimonial 3 -->
-              <!-- </div>
-                  </div>
-                </div>   -->
-              <!-- End of Testimonials -->
-
-              <!-- <div class="white-space-50"></div> -->
-
-              <!-- Clients -->
-              <!-- <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="block-title">
-                      <h3>Cilents</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="clients owl-carousel">
-                      <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                          <img src="img/clients/client-1.png" alt="Logo" />
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                          <img src="img/clients/client-2.png" alt="Logo" />
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                          <img src="img/clients/client-3.png" alt="Logo" />
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                          <img src="img/clients/client-4.png" alt="Logo" />
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                          <img src="img/clients/client-5.png" alt="Logo" />
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                          <img src="img/clients/client-6.png" alt="Logo" />
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                          <img src="img/clients/client-7.png" alt="Logo" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-              <!-- End of Clients -->
-
-              <!-- <div class="white-space-50"></div> -->
-
-              <!-- Pricing -->
-              <!-- <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="block-title">
-                      <h3>Pricing</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="fw-pricing clearfix row">
-                      <div class="fw-package-wrap col-md-6">
-                        <div class="fw-package">
-                          <div class="fw-heading-row">
-                            <span>Silver</span>
-                          </div>
-
-                          <div class="fw-pricing-row">
-                            <span>$64</span>
-                            <small>per month</small>
-                          </div>
-
-                          <div class="fw-button-row">
-                            <a href="#" target="_self" class="btn btn-secondary"
-                              >Free Trial</a
-                            >
-                          </div>
-
-                          <div class="fw-default-row">Lorem ipsum dolor</div>
-                          <div class="fw-default-row">
-                            Pellentesque scelerisque
-                          </div>
-                          <div class="fw-default-row">Morbi eu sagittis</div>
-                        </div>
-                      </div>
-
-                      <div class="fw-package-wrap col-md-6 highlight-col">
-                        <div class="fw-package">
-                          <div class="fw-heading-row">
-                            <span>Gold</span>
-                          </div>
-
-                          <div class="fw-pricing-row">
-                            <span>$128</span>
-                            <small>per month</small>
-                          </div>
-
-                          <div class="fw-button-row">
-                            <a href="#" target="_self" class="btn btn-primary"
-                              >Free Trial</a
-                            >
-                          </div>
-
-                          <div class="fw-default-row">Lorem ipsum dolor</div>
-                          <div class="fw-default-row">
-                            Pellentesque scelerisque
-                          </div>
-                          <div class="fw-default-row">Morbi eu sagittis</div>
-                          <div class="fw-default-row">Donec non diam</div>
-                          <div class="fw-default-row"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-              <!-- End of Pricing -->
-
               <div class="white-space-50"></div>
 
               <!-- Fun Facts -->
@@ -619,6 +491,20 @@
                   <div class="timeline timeline-second-style clearfix">
                     <div class="timeline-item clearfix">
                       <div class="left-part">
+                        <h5 class="item-period">May 2026 – Present</h5>
+                        <span class="item-company">IIT Ropar</span>
+                      </div>
+                      <div class="divider"></div>
+                      <div class="right-part">
+                        <h4 class="item-title">Research Intern</h4>
+                        <p>
+                          Working as a Research Intern at IIT Ropar.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item clearfix">
+                      <div class="left-part">
                         <h5 class="item-period">Ongoing</h5>
                         <span class="item-company">Research Projects</span>
                       </div>
@@ -680,16 +566,6 @@
                   </div>
 
                   <div class="skills-info skills-second-style">
-                    <!-- Skill 5 -->
-                    <!-- <div class="skill clearfix">
-                      <h4>Computer Vision</h4>
-                      <div class="skill-value">95%</div>
-                    </div> -->
-                    <!-- <div class="skill-container skill-5">
-                      <div class="skill-percentage"></div>
-                    </div> -->
-                    <!-- End of Skill 5 -->
-
                     <!-- Skill 6 -->
                     <div class="skill clearfix">
                       <h4>Machine Learning / Deep Learning</h4>
@@ -784,16 +660,6 @@
                       <div class="skill-percentage"></div>
                     </div>
                     <!-- End of Skill 3 -->
-
-                    <!-- Skill 4 -->
-                    <!-- <div class="skill clearfix">
-                        <h4>Graphic Design</h4>
-                        <div class="skill-value">90%</div>
-                      </div>
-                      <div class="skill-container skill-4">
-                        <div class="skill-percentage"></div>
-                      </div> -->
-                    <!-- End of Skill 4 -->
                   </div>
                   <!-- End of Design Skills -->
 
@@ -822,95 +688,6 @@
                 </div>
                 <!-- End of Skills & Certificates -->
               </div>
-
-              <div class="white-space-50"></div>
-
-              <!-- Certificates -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="block-title">
-                    <h3>Certifications</h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <!-- Certificate 1 -->
-                <div class="col-xs-12 col-sm-6">
-                  <div class="certificate-item clearfix">
-                    <div class="certi-logo">
-                      <img src="images/client-1.png" alt="NVIDIA Certification">
-                    </div>
-
-                    <div class="certi-content">
-                      <div class="certi-title">
-                        <h4>NVIDIA Certification</h4>
-                      </div>
-                      <div class="certi-id">
-                        <!-- <span>Membership ID: XXXX</span> -->
-                      </div>
-                      <div class="certi-date">
-                        <span></span>
-                      </div>
-                      <p>
-                        Certified by NVIDIA.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- End of Certificate 1 -->
-
-                <!-- Certificate 2 -->
-                <div class="col-xs-12 col-sm-6">
-                  <div class="certificate-item clearfix">
-                    <div class="certi-logo">
-                      <img src="images/HM.png" alt="ISRO / IIRS Certification">
-                    </div>
-
-                    <div class="certi-content">
-                      <div class="certi-title">
-                        <h4>ISRO / IIRS Certification</h4>
-                      </div>
-                      <div class="certi-id">
-                        <!-- <span>Membership ID: XXXX</span> -->
-                      </div>
-                      <div class="certi-date">
-                        <span></span>
-                      </div>
-                      <p>
-                        Certified by ISRO / IIRS.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- End of Certificate 2 -->
-
-                <!-- Certificate 2 -->
-                <!-- <div class="col-xs-12 col-sm-6">
-                    <div class="certificate-item clearfix">
-                      <div class="certi-logo">
-                        <img src="img/clients/client-1.png" alt="logo" />
-                      </div>
-
-                      <div class="certi-content">
-                        <div class="certi-title">
-                          <h4>Psyhology of Intertnation Design</h4>
-                        </div>
-                        <div class="certi-id">
-                          <span>Membership ID: XXXX</span>
-                        </div>
-                        <div class="certi-date">
-                          <span>19 April 2018</span>
-                        </div>
-                        <div class="certi-company">
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                <!-- End of Certificate 2 -->
-              </div>
-              <!-- End of Certificates -->
             </div>
           </section>
           <!-- End of Resume Subpage -->
@@ -940,21 +717,107 @@
                         <a class="filter btn btn-sm btn-link" data-group="Research">Research</a>
                       </li>
                       <li>
+                        <a class="filter btn btn-sm btn-link" data-group="Data">Data Analysis</a>
+                      </li>
+                      <li>
                         <a class="filter btn btn-sm btn-link" data-group="Miscellaneous">Miscellaneous</a>
                       </li>
                     </ul>
 
                     <!-- Portfolio Grid -->
                     <div class="portfolio-grid three-columns">
+
+                      <!-- Video-Based Traffic Conflict Analysis -->
+                      <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/projects/traffic.jpg" alt="Video-Based Traffic Conflict Analysis" title="">
+                          <a href="https://github.com/anuragnayak01" title="Video-Based Traffic Conflict Analysis"></a>
+                        </div>
+                        <h4 class="name">Video-Based Traffic Conflict Analysis</h4>
+                        <span class="category">YOLOv8 + ByteTrack vehicle tracking and TTC/DRAC conflict detection</span>
+                      </figure>
+
+                      <!-- Hybrid Explainable Anomaly Detection for 6G Network Slicing -->
+                      <figure class="item standard" data-groups='["category_all", "AI/ML", "Research"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/projects/network6g.jpg" alt="Hybrid Explainable Anomaly Detection for 6G Network Slicing" title="">
+                          <a href="https://github.com/anuragnayak01/Hybrid-Deep-Logical-Explainable-Model-for-6G-Network-Slice-Anomaly-Detection" target="_blank" title="Hybrid Explainable Anomaly Detection for 6G Network Slicing"></a>
+                        </div>
+                        <h4 class="name">Hybrid Explainable Anomaly Detection for 6G Network Slicing</h4>
+                        <span class="category">Hybrid deep–logical model with XAI across eMBB, mMTC, URLLC slices</span>
+                      </figure>
+
+                      <!-- GetFit -->
+                      <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/projects/yoga.jpg" alt="GetFit: Human Pose Estimator & Yoga Pose Classifier" title="">
+                          <a href="https://github.com/anuragnayak01/GetFit_YogaPoseClassifier" target="_blank" title="GetFit: Human Pose Estimator & Yoga Pose Classifier"></a>
+                        </div>
+                        <h4 class="name">GetFit: Human Pose Estimator &amp; Yoga Pose Classifier</h4>
+                        <span class="category">MediaPipe + OpenCV + TensorFlow/Keras yoga pose classification</span>
+                      </figure>
+
+                      <!-- Visual Image Similarity Search Engine -->
+                      <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/projects/similarity.jpg" alt="Visual Image Similarity Search Engine" title="">
+                          <a href="https://github.com/anuragnayak01" title="Visual Image Similarity Search Engine"></a>
+                        </div>
+                        <h4 class="name">Visual Image Similarity Search Engine</h4>
+                        <span class="category">ResNet50 feature extraction with Annoy nearest-neighbor search</span>
+                      </figure>
+
+                      <!-- Analysis & Visualization of Renewable Resource Data -->
+                      <figure class="item standard" data-groups='["category_all", "Data"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/projects/data_analytics.jpg" alt="Analysis & Visualization of Renewable Resource Data" title="">
+                          <a href="https://github.com/anuragnayak01" title="Analysis & Visualization of Renewable Resource Data"></a>
+                        </div>
+                        <h4 class="name">Analysis &amp; Visualization of Renewable Resource Data</h4>
+                        <span class="category">Python/Pandas EDA with an interactive Power BI dashboard</span>
+                      </figure>
+
+                      <!-- Truck Delivery Profit Optimization -->
+                      <figure class="item standard" data-groups='["category_all", "Miscellaneous"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/projects/truck.jpg" alt="Truck Delivery Profit Optimization" title="">
+                          <a href="https://github.com/anuragnayak01/Truck_delivery_route_optimization" target="_blank" title="Truck Delivery Profit Optimization"></a>
+                        </div>
+                        <h4 class="name">Truck Delivery Profit Optimization</h4>
+                        <span class="category">C++ shortest-path optimization using Dijkstra &amp; Bellman-Ford</span>
+                      </figure>
+
+                      <!-- EDA Amazon Dataset -->
+                      <figure class="item standard" data-groups='["category_all", "Data"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/projects/amazon_eda.jpg" alt="Exploratory Data Analysis — Amazon Dataset" title="">
+                          <a href="https://github.com/anuragnayak01/EDA_Amazon_dataset" target="_blank" title="Exploratory Data Analysis — Amazon Dataset"></a>
+                        </div>
+                        <h4 class="name">Exploratory Data Analysis — Amazon Dataset</h4>
+                        <span class="category">Pandas/Seaborn EDA on pricing, ratings and discount impact</span>
+                      </figure>
+
+                      <!-- Soil MIR Spectroscopy — USSN v2 -->
+                      <figure class="item standard" data-groups='["category_all", "AI/ML", "Research"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/projects/soil_ussn.jpg" alt="Soil MIR Spectroscopy — USSN v2" title="">
+                          <a href="https://github.com/anuragnayak01/soil-mir-ussn" target="_blank" title="Soil MIR Spectroscopy — USSN v2"></a>
+                        </div>
+                        <h4 class="name">Soil MIR Spectroscopy — USSN v2</h4>
+                        <span class="category">Mamba/SSM + Physics-ALiBi deep learning for soil property prediction</span>
+                      </figure>
+
+                      <!-- VeritasAI -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
                         <div class="portfolio-item-img">
                           <img src="images/veritasai.jpg" alt="VeritasAI" title="">
-                          <a href="https://github.com/anuragnayak01" title="VeritasAI - Fake News Detection"></a>
+                          <a href="https://veritasai-j3ip.onrender.com" target="_blank" title="VeritasAI - Fake News Detection"></a>
                         </div>
                         <h4 class="name">VeritasAI</h4>
-                        <span class="category">Fake News Detection — Production ML Backend</span>
+                        <span class="category">Fake News Detection — Production FastAPI Backend (~3,200 lines)</span>
                       </figure>
 
+                      <!-- TrueCandidate -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
                         <div class="portfolio-item-img">
                           <img src="images/truecandidate.jpg" alt="TrueCandidate / Sherlock" title="">
@@ -964,15 +827,17 @@
                         <span class="category">Real-time Interview Identity Verification</span>
                       </figure>
 
-                      <figure class="item standard" data-groups='["category_all", "Full Stack", "AI/ML"]'>
+                      <!-- InsightPulse -->
+                      <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
                         <div class="portfolio-item-img">
                           <img src="images/insightpulse.jpg" alt="InsightPulse" title="">
-                          <a href="https://insightpulse-2vvm.onrender.com" title="InsightPulse - Real-Time Support Triager"></a>
+                          <a href="https://insightpulse-2vvm.onrender.com" target="_blank" title="InsightPulse - Real-Time Support Triager"></a>
                         </div>
                         <h4 class="name">InsightPulse</h4>
-                        <span class="category">Real-Time Support Triager — LangGraph + CrewAI + FastAPI</span>
+                        <span class="category">Real-Time Support Triager — LangGraph + CrewAI + FastAPI + ChromaDB + Groq</span>
                       </figure>
 
+                      <!-- Insurance-Renewal Voice Agent -->
                       <figure class="item standard" data-groups='["category_all", "Full Stack", "AI/ML"]'>
                         <div class="portfolio-item-img">
                           <img src="images/insurance-renewal.jpg" alt="Insurance Renewal Voice Agent" title="">
@@ -982,24 +847,37 @@
                         <span class="category">Multilingual LiveKit Voice Agent + FastAPI Backend</span>
                       </figure>
 
-                      <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
+                      <!-- PediTriage -->
+                      <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
                         <div class="portfolio-item-img">
                           <img src="images/peditriage.jpg" alt="PediTriage" title="">
-                          <a href="https://github.com/anuragnayak01" title="PediTriage"></a>
+                          <a href="https://github.com/anuragnayak01/pediatric-triage" target="_blank" title="PediTriage"></a>
                         </div>
                         <h4 class="name">PediTriage</h4>
-                        <span class="category">Bilingual Pediatric Symptom Triage — RAG + Streamlit</span>
+                        <span class="category">Bilingual (English/Arabic) Pediatric Symptom Triage — RAG + Streamlit + ChromaDB</span>
                       </figure>
 
+                      <!-- GAF-Net -->
                       <figure class="item standard" data-groups='["category_all", "Research", "AI/ML"]'>
                         <div class="portfolio-item-img">
                           <img src="images/gaf-net.jpg" alt="GAF-Net" title="">
-                          <a href="https://github.com/anuragnayak01" title="GAF-Net Research Paper"></a>
+                          <a href="https://github.com/anuragnayak01/Face_verification_Framework" target="_blank" title="GAF-Net Research Paper"></a>
                         </div>
                         <h4 class="name">GAF-Net</h4>
-                        <span class="category">Research Paper — Age-Invariant Face Verification</span>
+                        <span class="category">Research Paper — Age-Invariant Face Verification (ArcFace, FaceNet, SHAP)</span>
                       </figure>
 
+                      <!-- Pan-Cancer Multi-Omics Survival Prediction -->
+                      <figure class="item standard" data-groups='["category_all", "Research", "Data"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/pancancer.jpg" alt="Pan-Cancer Multi-Omics Survival Prediction" title="">
+                          <a href="https://github.com/anuragnayak01/pan-cancer-multiomics-survival" target="_blank" title="Pan-Cancer Multi-Omics Survival Prediction"></a>
+                        </div>
+                        <h4 class="name">Pan-Cancer Multi-Omics Survival Prediction</h4>
+                        <span class="category">TCGA multi-omics survival pipeline with MOFA+, Nash-MTL and SHAP</span>
+                      </figure>
+
+                      <!-- SoilPFN -->
                       <figure class="item standard" data-groups='["category_all", "Research"]'>
                         <div class="portfolio-item-img">
                           <img src="images/soilpfn.jpg" alt="SoilPFN" title="">
@@ -1009,6 +887,37 @@
                         <span class="category">Research Paper — PLS-Conditioned TabPFN for MIR Soil Spectroscopy (JSIR)</span>
                       </figure>
 
+                      <!-- The Pitch Visualizer -->
+                      <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Full Stack"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/pitch-visualizer.jpg" alt="The Pitch Visualizer" title="">
+                          <a href="https://github.com/anuragnayak01/The-Pitch-Visualizer" target="_blank" title="The Pitch Visualizer"></a>
+                        </div>
+                        <h4 class="name">The Pitch Visualizer</h4>
+                        <span class="category">FastAPI storyboard generator using Pollinations.ai, deployed on Render</span>
+                      </figure>
+
+                      <!-- VaultAI -->
+                      <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Full Stack"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/vaultai.jpg" alt="VaultAI" title="">
+                          <a href="https://github.com/anuragnayak01/Vaultai" target="_blank" title="VaultAI - Project Knowledge Vault"></a>
+                        </div>
+                        <h4 class="name">VaultAI — Project Knowledge Vault</h4>
+                        <span class="category">Personal knowledge-vault for project docs, design specs and research notes</span>
+                      </figure>
+
+                      <!-- Sports Tracker -->
+                      <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Data"]'>
+                        <div class="portfolio-item-img">
+                          <img src="images/sports-tracker.jpg" alt="Sports Tracker" title="">
+                          <a href="https://github.com/anuragnayak01/sports-tracker" target="_blank" title="Sports Tracker"></a>
+                        </div>
+                        <h4 class="name">Sports Tracker</h4>
+                        <span class="category">Python tool to fetch and track live sports scores, standings and stats</span>
+                      </figure>
+
+                      <!-- LinkedIn JobRadar -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous"]'>
                         <div class="portfolio-item-img">
                           <img src="images/jobradar.jpg" alt="LinkedIn JobRadar" title="">
@@ -1018,27 +927,6 @@
                         <span class="category">Python / Playwright Job Scraper (v4)</span>
                       </figure>
 
-                      <!-- <figure
-                          class="item lbvideo"
-                          data-groups='["category_all", "category_youtube-videos"]'
-                        >
-                          <div class="portfolio-item-img">
-                            <img
-                              src="img/portfolio/6.jpg"
-                              alt="YouTube Video 1"
-                              title=""
-                            />
-                            <a
-                              href="https://www.youtube.com/embed/bg0gv2YpIok"
-                              class="lightbox mfp-iframe"
-                              title="YouTube Video 1"
-                            ></a>
-                          </div>
-
-                          <i class="fas fa-video"></i>
-                          <h4 class="name">YouTube Video 1</h4>
-                          <span class="category">YouTube Videos</span>
-                        </figure> -->
                     </div>
                   </div>
                   <!-- End of Portfolio Content -->
@@ -1047,6 +935,201 @@
             </div>
           </section>
           <!-- End of Portfolio Subpage -->
+
+          <!-- Certifications Subpage -->
+          <section data-id="certifications" class="animated-section">
+            <div class="page-title">
+              <h2>Certifications</h2>
+            </div>
+
+            <div class="section-content">
+              <div class="cert-section-title">
+                <hr>
+              </div>
+
+              <!-- Featured certifications -->
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="certificate-item clearfix">
+                    <div class="certi-logo">
+                      <img src="images/client-1.png" alt="NVIDIA Certification">
+                    </div>
+                    <div class="certi-content">
+                      <div class="certi-title">
+                        <h4>NVIDIA Certification</h4>
+                      </div>
+                      <p>Certified by NVIDIA.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+                  <div class="certificate-item clearfix">
+                    <div class="certi-logo">
+                      <img src="images/HM.png" alt="ISRO / IIRS Certification">
+                    </div>
+                    <div class="certi-content">
+                      <div class="certi-title">
+                        <h4>ISRO / IIRS Certification</h4>
+                      </div>
+                      <p>Certified by ISRO / IIRS.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="white-space-30"></div>
+
+              <!-- Hackathon Participation -->
+              <h4 class="cert-category-heading">Hackathon Participation</h4>
+              <p class="cert-scroll-hint">Scroll to explore &nbsp;<i class="fa fa-arrow-right"></i></p>
+
+              <div class="cert-scroll-track">
+                <a class="cert-card" href="Hackathon_Participation_Certificates/02f9b89f-a314-42d9-ac29-84f8a5cbb836_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/02f9b89f-a314-42d9-ac29-84f8a5cbb836_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/14ba6915-abf6-495d-815f-86258bb7725f (1)_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/14ba6915-abf6-495d-815f-86258bb7725f (1)_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/1ce6eddf-e213-4524-b897-c471cf4bf933_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/1ce6eddf-e213-4524-b897-c471cf4bf933_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/1e5d74c2-2318-46b7-b1fe-1b9d07f4fe30_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/1e5d74c2-2318-46b7-b1fe-1b9d07f4fe30_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/2025H2S06BAH25-P05639_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/2025H2S06BAH25-P05639_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/2e2deaea-62c9-4f71-a370-15c0c398e56b_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/2e2deaea-62c9-4f71-a370-15c0c398e56b_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/46021bc0-1a2a-44b9-ac56-4dbf566895e6_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/46021bc0-1a2a-44b9-ac56-4dbf566895e6_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/5c0c7f05-c717-4dd8-ad2e-7fec66971870_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/5c0c7f05-c717-4dd8-ad2e-7fec66971870_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/b57ba937-7c13-4414-a91e-f84c2904b6fb_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/b57ba937-7c13-4414-a91e-f84c2904b6fb_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/d926ff1d-9d7c-41ad-ad38-0599da888c90_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/d926ff1d-9d7c-41ad-ad38-0599da888c90_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Hackathon_Participation_Certificates/e2eebb07-d759-4f1f-9d13-15cc6861e147_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Hackathon_Participation_Certificates/e2eebb07-d759-4f1f-9d13-15cc6861e147_page-0001.jpg" alt="Hackathon certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-trophy"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Hackathon Certificate</h5>
+                    <span class="cert-badge">Hackathon</span>
+                  </div>
+                </a>
+                <!-- ➕ Add more hackathon cards by copying any block above -->
+              </div>
+              <!-- end hackathon scroll track -->
+
+              <div class="white-space-30"></div>
+
+              <!-- Other Certificates -->
+              <h4 class="cert-category-heading green">Certificates</h4>
+              <p class="cert-scroll-hint">Scroll to explore &nbsp;<i class="fa fa-arrow-right"></i></p>
+
+              <div class="cert-scroll-track">
+                <a class="cert-card" href="Certificates/Certificate_page-0001.jpg" target="_blank">
+                  <img class="cert-card-img" src="Certificates/Certificate_page-0001.jpg" alt="Certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-certificate"></i></div>
+                  <div class="cert-card-body">
+                    <h5>Certificate</h5>
+                    <span class="cert-badge green">Certificate</span>
+                  </div>
+                </a>
+
+                <a class="cert-card" href="Certificates/Nvidia_certificate01.pdf.jpg" target="_blank">
+                  <img class="cert-card-img" src="Certificates/Nvidia_certificate01.pdf.jpg" alt="NVIDIA Certificate"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="cert-card-img-placeholder" style="display:none;"><i class="fa fa-certificate"></i></div>
+                  <div class="cert-card-body">
+                    <h5>NVIDIA Certificate</h5>
+                    <span class="cert-badge green">Certificate</span>
+                  </div>
+                </a>
+                <!-- ➕ Add more certificate cards by copying any block above -->
+              </div>
+              <!-- end certificates scroll track -->
+            </div>
+          </section>
+          <!-- End of Certifications Subpage -->
 
           <!-- Blog Subpage -->
           <section data-id="blog" class="animated-section">
@@ -1064,135 +1147,6 @@
                 <h1 style="color: yellow">Coming Soon !</h1>
               </center>
             </div>
-            <!-- <div class="section-content">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="blog-masonry two-columns clearfix"> -->
-            <!-- Blog Post 1 -->
-            <!-- <div class="item post-1">
-                        <div class="blog-card">
-                          <div class="media-block">
-                            <div class="category">
-                              <a href="#" title="View all posts in Design"
-                                >Design</a
-                              >
-                            </div>
-                            <a href="blog-post-1.html">
-                              <img
-                                src="img/blog/blog_post_1.jpg"
-                                class="size-blog-masonry-image-two-c"
-                                alt="Why I Switched to Sketch For UI Design"
-                                title=""
-                              />
-                              <div class="mask"></div>
-                            </a>
-                          </div>
-                          <div class="post-info">
-                            <div class="post-date">05 Mar 2020</div>
-                            <a href="blog-post-1.html">
-                              <h4 class="blog-item-title">
-                                Why I Switched to Sketch For UI Design
-                              </h4>
-                            </a>
-                          </div>
-                        </div>
-                      </div> -->
-            <!-- End of Blog Post 1 -->
-
-            <!-- Blog Post 2 -->
-            <!-- <div class="item post-2">
-                        <div class="blog-card">
-                          <div class="media-block">
-                            <div class="category">
-                              <a href="#" title="View all posts in UI">UI</a>
-                            </div>
-                            <a href="blog-post-1.html">
-                              <img
-                                src="img/blog/blog_post_2.jpg"
-                                class="size-blog-masonry-image-two-c"
-                                alt="Best Practices for Animated Progress Indicators"
-                                title=""
-                              />
-                              <div class="mask"></div>
-                            </a>
-                          </div>
-                          <div class="post-info">
-                            <div class="post-date">23 Feb 2020</div>
-                            <a href="blog-post-1.html">
-                              <h4 class="blog-item-title">
-                                Best Practices for Animated Progress Indicators
-                              </h4>
-                            </a>
-                          </div>
-                        </div>
-                      </div> -->
-            <!-- End of Blog Post 2 -->
-
-            <!-- Blog Post 3 -->
-            <!-- <div class="item post-1">
-                        <div class="blog-card">
-                          <div class="media-block">
-                            <div class="category">
-                              <a href="#" title="View all posts in Design"
-                                >Design</a
-                              >
-                            </div>
-                            <a href="blog-post-1.html">
-                              <img
-                                src="img/blog/blog_post_3.jpg"
-                                class="size-blog-masonry-image-two-c"
-                                alt="Designing the Perfect Feature Comparison Table"
-                                title=""
-                              />
-                              <div class="mask"></div>
-                            </a>
-                          </div>
-                          <div class="post-info">
-                            <div class="post-date">06 Feb 2020</div>
-                            <a href="blog-post-1.html">
-                              <h4 class="blog-item-title">
-                                Designing the Perfect Feature Comparison Table
-                              </h4>
-                            </a>
-                          </div>
-                        </div>
-                      </div> -->
-            <!-- End of Blog Post 3 -->
-
-            <!-- Blog Post 4 -->
-            <!-- <div class="item post-2">
-                        <div class="blog-card">
-                          <div class="media-block">
-                            <div class="category">
-                              <a href="#" title="View all posts in E-Commerce"
-                                >UI</a
-                              >
-                            </div>
-                            <a href="blog-post-1.html">
-                              <img
-                                src="img/blog/blog_post_4.jpg"
-                                class="size-blog-masonry-image-two-c"
-                                alt="An Overview of E-Commerce Platforms"
-                                title=""
-                              />
-                              <div class="mask"></div>
-                            </a>
-                          </div>
-                          <div class="post-info">
-                            <div class="post-date">07 Jan 2020</div>
-                            <a href="blog-post-1.html">
-                              <h4 class="blog-item-title">
-                                An Overview of E-Commerce Platforms
-                              </h4>
-                            </a>
-                          </div>
-                        </div>
-                      </div> -->
-            <!-- End of Blog Post 4 -->
-            <!-- </div>
-                  </div>
-                </div>
-              </div> -->
           </section>
           <!-- End of Blog Subpage -->
 
@@ -1230,21 +1184,11 @@
                     <span class="lm-info-block-value"></span>
                     <span class="lm-info-block-text"></span>
                   </div>
-
-                  <!-- <div class="lm-info-block gray-default">
-                      <i class="lnr lnr-checkmark-circle"></i>
-                      <h4>Freelance Available</h4>
-                      <span class="lm-info-block-value"></span>
-                      <span class="lm-info-block-text"></span>
-
-                      
-                    </div> -->
                 </div>
                 <!-- End of Contact Info -->
 
                 <!-- Contact Form -->
                 <div class="col-xs-12 col-sm-8">
-                  <!-- <div id="map" class="map"></div> -->
                   <div>
                     <img src="images/connect.jpeg" class="map-fallback img-responsive" alt="Map">
                   </div>
