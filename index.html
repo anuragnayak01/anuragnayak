@@ -128,6 +128,112 @@
   background: rgba(124,252,156,0.15);
   color: #7CFC9C;
 }
+
+/* ===== Flippable Project Cards ===== */
+.portfolio-grid.three-columns figure.item {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 24px;
+}
+.portfolio-grid .col {
+  perspective: 1200px;
+  height: 270px;
+  cursor: pointer;
+}
+.portfolio-grid .project-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.portfolio-grid .project-container .front,
+.portfolio-grid .project-container .back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 10px;
+  transition: transform .6s cubic-bezier(.4,.2,.2,1);
+}
+.portfolio-grid .project-container .front {
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(0deg);
+  z-index: 2;
+  overflow: hidden;
+}
+.portfolio-grid .project-container .front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.4) 55%, rgba(0,0,0,.12) 100%);
+}
+.portfolio-grid .project-container .front .inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  text-align: center;
+}
+.portfolio-grid .project-container .front .inner p {
+  color: #fff;
+  font-weight: 700;
+  margin: 0 0 6px;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.portfolio-grid .project-container .front .inner span {
+  color: #d7d7e6;
+  font-size: .78rem;
+}
+.portfolio-grid .project-container .back {
+  background: #12162b;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px;
+  overflow-y: auto;
+}
+.portfolio-grid .project-container .back .portfolio-links {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.portfolio-grid .project-container .back .portfolio-links a {
+  color: #00ffff;
+  font-size: 1.15rem;
+  margin: 0 8px;
+}
+.portfolio-grid .project-container .back .list ul {
+  padding-left: 18px;
+  margin: 0;
+  font-size: .76rem;
+  line-height: 1.42;
+  color: #dcdce8;
+  text-align: left;
+}
+.portfolio-grid .col:hover .front,
+.portfolio-grid .col.hover .front {
+  transform: rotateY(-180deg);
+}
+.portfolio-grid .col:hover .back,
+.portfolio-grid .col.hover .back {
+  transform: rotateY(0deg);
+}
+.portfolio-grid .project-front-gradient {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
 </style>
  
 </head>
@@ -729,202 +835,522 @@
 
                       <!-- Video-Based Traffic Conflict Analysis -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/projects/traffic.jpg" alt="Video-Based Traffic Conflict Analysis" title="">
-                          <a href="https://github.com/anuragnayak01" title="Video-Based Traffic Conflict Analysis"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/projects/traffic.jpg);">
+                              <div class="inner">
+                                <p>Video-Based Traffic Conflict Analysis</p>
+                                <span>YOLOv8 | ByteTrack | Python</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Tracked 1,675 vehicles at 0.2s intervals using YOLOv8 + ByteTrack, applying LOESS smoothing over 37,683 trajectory points.</li>
+                                  <li>Computed TTC &amp; DRAC across 14,587 leader-follower pairs, detecting 540 critical rear-end conflicts at 59% peak conflict rate.</li>
+                                  <li>Auto-detected signal phase boundaries for comprehensive traffic safety analysis.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Video-Based Traffic Conflict Analysis</h4>
-                        <span class="category">YOLOv8 + ByteTrack vehicle tracking and TTC/DRAC conflict detection</span>
                       </figure>
 
                       <!-- Hybrid Explainable Anomaly Detection for 6G Network Slicing -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Research"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/projects/network6g.jpg" alt="Hybrid Explainable Anomaly Detection for 6G Network Slicing" title="">
-                          <a href="https://github.com/anuragnayak01/Hybrid-Deep-Logical-Explainable-Model-for-6G-Network-Slice-Anomaly-Detection" target="_blank" title="Hybrid Explainable Anomaly Detection for 6G Network Slicing"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/projects/network6g.jpg);">
+                              <div class="inner">
+                                <p>Hybrid Explainable Anomaly Detection for 6G Network Slicing</p>
+                                <span>Deep Learning | Rule-Based | XAI</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/Hybrid-Deep-Logical-Explainable-Model-for-6G-Network-Slice-Anomaly-Detection" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a hybrid deep–logical model to detect anomalies across 3 6G network slices (eMBB, mMTC, URLLC).</li>
+                                  <li>Achieved 8.7% accuracy improvement over deep learning baselines.</li>
+                                  <li>Delivered interpretable, end-to-end anomaly explanations using XAI techniques.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Hybrid Explainable Anomaly Detection for 6G Network Slicing</h4>
-                        <span class="category">Hybrid deep–logical model with XAI across eMBB, mMTC, URLLC slices</span>
                       </figure>
 
                       <!-- GetFit -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/projects/yoga.jpg" alt="GetFit: Human Pose Estimator & Yoga Pose Classifier" title="">
-                          <a href="https://github.com/anuragnayak01/GetFit_YogaPoseClassifier" target="_blank" title="GetFit: Human Pose Estimator & Yoga Pose Classifier"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/projects/yoga.jpg);">
+                              <div class="inner">
+                                <p>GetFit: Human Pose Estimator &amp; Yoga Pose Classifier</p>
+                                <span>MediaPipe | OpenCV | TensorFlow | Keras</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/GetFit_YogaPoseClassifier" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Integrated MediaPipe for precise keypoint detection and OpenCV for real-time video processing.</li>
+                                  <li>Trained a TensorFlow/Keras model on 1,000+ pose samples achieving 88%+ accuracy across 4 yoga poses.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">GetFit: Human Pose Estimator &amp; Yoga Pose Classifier</h4>
-                        <span class="category">MediaPipe + OpenCV + TensorFlow/Keras yoga pose classification</span>
                       </figure>
 
                       <!-- Visual Image Similarity Search Engine -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/projects/similarity.jpg" alt="Visual Image Similarity Search Engine" title="">
-                          <a href="https://github.com/anuragnayak01" title="Visual Image Similarity Search Engine"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/projects/similarity.jpg);">
+                              <div class="inner">
+                                <p>Visual Image Similarity Search Engine</p>
+                                <span>ResNet50 | Annoy | Python</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built an image similarity system processing 1,000+ images to retrieve visually similar images.</li>
+                                  <li>Used ResNet50 for deep feature extraction and Annoy (Spotify Nearest Neighbor Library) for efficient nearest-neighbor search.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Visual Image Similarity Search Engine</h4>
-                        <span class="category">ResNet50 feature extraction with Annoy nearest-neighbor search</span>
                       </figure>
 
                       <!-- Analysis & Visualization of Renewable Resource Data -->
                       <figure class="item standard" data-groups='["category_all", "Data"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/projects/data_analytics.jpg" alt="Analysis & Visualization of Renewable Resource Data" title="">
-                          <a href="https://github.com/anuragnayak01" title="Analysis & Visualization of Renewable Resource Data"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/projects/data_analytics.jpg);">
+                              <div class="inner">
+                                <p>Analysis &amp; Visualization of Renewable Resource Data</p>
+                                <span>Python | Power BI | Pandas | NumPy | Matplotlib</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Performed EDA using Pandas and NumPy for data cleaning, answering 5+ analytical questions via Matplotlib and Seaborn visualizations.</li>
+                                  <li>Built an interactive Power BI dashboard with 10 KPI-driven insights, slicers, and geo-spatial maps for regional analysis.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Analysis &amp; Visualization of Renewable Resource Data</h4>
-                        <span class="category">Python/Pandas EDA with an interactive Power BI dashboard</span>
                       </figure>
 
                       <!-- Truck Delivery Profit Optimization -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/projects/truck.jpg" alt="Truck Delivery Profit Optimization" title="">
-                          <a href="https://github.com/anuragnayak01/Truck_delivery_route_optimization" target="_blank" title="Truck Delivery Profit Optimization"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/projects/truck.jpg);">
+                              <div class="inner">
+                                <p>Truck Delivery Profit Optimization</p>
+                                <span>C++ | Dijkstra | Bellman-Ford</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/Truck_delivery_route_optimization" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Designed an efficient algorithm to maximize truck delivery profit by optimizing shortest-path computations.</li>
+                                  <li>Improved route selection performance using optimized implementations of Dijkstra's and Bellman–Ford algorithms.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Truck Delivery Profit Optimization</h4>
-                        <span class="category">C++ shortest-path optimization using Dijkstra &amp; Bellman-Ford</span>
                       </figure>
 
                       <!-- EDA Amazon Dataset -->
                       <figure class="item standard" data-groups='["category_all", "Data"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/projects/amazon_eda.jpg" alt="Exploratory Data Analysis — Amazon Dataset" title="">
-                          <a href="https://github.com/anuragnayak01/EDA_Amazon_dataset" target="_blank" title="Exploratory Data Analysis — Amazon Dataset"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/projects/amazon_eda.jpg);">
+                              <div class="inner">
+                                <p>Exploratory Data Analysis — Amazon Dataset</p>
+                                <span>Python | Pandas | NumPy | Matplotlib | Seaborn</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/EDA_Amazon_dataset" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Performed comprehensive EDA on Amazon product dataset using Pandas and NumPy for data cleaning and transformation.</li>
+                                  <li>Generated insightful visualizations with Matplotlib and Seaborn to uncover pricing trends, rating distributions, and category-level patterns.</li>
+                                  <li>Answered key analytical questions on product performance, discount impact, and customer review behavior.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Exploratory Data Analysis — Amazon Dataset</h4>
-                        <span class="category">Pandas/Seaborn EDA on pricing, ratings and discount impact</span>
                       </figure>
 
                       <!-- Soil MIR Spectroscopy — USSN v2 -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Research"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/projects/soil_ussn.jpg" alt="Soil MIR Spectroscopy — USSN v2" title="">
-                          <a href="https://github.com/anuragnayak01/soil-mir-ussn" target="_blank" title="Soil MIR Spectroscopy — USSN v2"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#1c2140,#2d1b4e);">
+                              <div class="project-front-gradient"><i class="fa fa-leaf" style="font-size:56pt;color:rgba(145,94,255,.55);"></i></div>
+                              <div class="inner">
+                                <p>Soil MIR Spectroscopy — USSN v2</p>
+                                <span>PyTorch | Mamba/SSM | Deep Learning</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/soil-mir-ussn" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Designed a three-branch deep learning architecture (USSN v2) to predict six soil properties from USDA KSSL mid-infrared spectra.</li>
+                                  <li>Combined a Bidirectional SSM (Mamba) backbone, Physics-ALiBi attention, and NODE layers with an uncertainty-weighted multi-task loss.</li>
+                                  <li>Added MC-Dropout + split conformal prediction for calibrated uncertainty and a zero-inflated gated head for carbonate estimation.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Soil MIR Spectroscopy — USSN v2</h4>
-                        <span class="category">Mamba/SSM + Physics-ALiBi deep learning for soil property prediction</span>
                       </figure>
 
                       <!-- VeritasAI -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/veritasai.jpg" alt="VeritasAI" title="">
-                          <a href="https://veritasai-j3ip.onrender.com" target="_blank" title="VeritasAI - Fake News Detection"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#241a3a,#3a1c3f);">
+                              <div class="project-front-gradient"><i class="fa fa-shield" style="font-size:56pt;color:rgba(242,114,200,.55);"></i></div>
+                              <div class="inner">
+                                <p>VeritasAI — Fake News Detection</p>
+                                <span>FastAPI | TF-IDF | SQLite</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://veritasai-j3ip.onrender.com" target="_blank" title="Live Demo"><i class="fa fa-external-link"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a production-grade FastAPI backend (25 files, ~3,200 lines) with a self-contained frontend, deployed live on Render.</li>
+                                  <li>Solved a memory-constrained deployment by replacing PyTorch/sentence-transformer embeddings with a lightweight TF-IDF fallback.</li>
+                                  <li>Resolved a SQLite race condition between concurrent gunicorn workers for reliable multi-worker serving.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">VeritasAI</h4>
-                        <span class="category">Fake News Detection — Production FastAPI Backend (~3,200 lines)</span>
                       </figure>
 
                       <!-- TrueCandidate -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/truecandidate.jpg" alt="TrueCandidate / Sherlock" title="">
-                          <a href="https://github.com/anuragnayak01" title="TrueCandidate / Sherlock"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/truecandidate.jpg);">
+                              <div class="inner">
+                                <p>TrueCandidate (Sherlock)</p>
+                                <span>Real-time Interview Identity Verification</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a real-time identity-verification pipeline to flag impersonation during remote technical interviews.</li>
+                                  <li>Combined face-matching and liveness checks running continuously alongside the interview session.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">TrueCandidate (Sherlock)</h4>
-                        <span class="category">Real-time Interview Identity Verification</span>
                       </figure>
 
                       <!-- InsightPulse -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/insightpulse.jpg" alt="InsightPulse" title="">
-                          <a href="https://insightpulse-2vvm.onrender.com" target="_blank" title="InsightPulse - Real-Time Support Triager"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#1a2438,#1c2140);">
+                              <div class="project-front-gradient"><i class="fa fa-comments" style="font-size:56pt;color:rgba(94,145,255,.55);"></i></div>
+                              <div class="inner">
+                                <p>Real-Time Support Triage (InsightPulse)</p>
+                                <span>LangGraph | CrewAI | ChromaDB | Groq</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/Real-time-Support-triage" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                                <a href="https://insightpulse-2vvm.onrender.com" target="_blank" title="Live Demo"><i class="fa fa-external-link"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a multi-layer AI pipeline for real-time support ticket triage using LangGraph + CrewAI agents with FastAPI and ChromaDB retrieval.</li>
+                                  <li>Integrated Groq's LLaMA-3.3-70B for low-latency inference and deployed the full stack live on Render.</li>
+                                  <li>Resolved Python 3.14 compatibility issues, Poetry/path conflicts, and API key configuration for a stable deployment.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">InsightPulse</h4>
-                        <span class="category">Real-Time Support Triager — LangGraph + CrewAI + FastAPI + ChromaDB + Groq</span>
                       </figure>
 
                       <!-- Insurance-Renewal Voice Agent -->
                       <figure class="item standard" data-groups='["category_all", "Full Stack", "AI/ML"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/insurance-renewal.jpg" alt="Insurance Renewal Voice Agent" title="">
-                          <a href="https://github.com/anuragnayak01" title="Insurance-Renewal Voice Agent"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/insurance-renewal.jpg);">
+                              <div class="inner">
+                                <p>Insurance-Renewal Voice Agent</p>
+                                <span>LiveKit | FastAPI | Multilingual</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a multilingual LiveKit voice agent to walk customers through insurance-renewal calls end to end.</li>
+                                  <li>Backed the agent with a FastAPI service handling policy lookups and renewal logic in real time.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Insurance-Renewal Voice Agent</h4>
-                        <span class="category">Multilingual LiveKit Voice Agent + FastAPI Backend</span>
                       </figure>
 
                       <!-- PediTriage -->
                       <figure class="item standard" data-groups='["category_all", "AI/ML", "Full Stack"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/peditriage.jpg" alt="PediTriage" title="">
-                          <a href="https://github.com/anuragnayak01/pediatric-triage" target="_blank" title="PediTriage"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#1a2438,#2a1a3a);">
+                              <div class="project-front-gradient"><i class="fa fa-heartbeat" style="font-size:56pt;color:rgba(94,145,255,.55);"></i></div>
+                              <div class="inner">
+                                <p>PediTriage — Bilingual Symptom Triage</p>
+                                <span>Streamlit | ChromaDB | RAG</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/pediatric-triage" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a bilingual (English/Arabic) pediatric symptom triage app with a RAG backend using ChromaDB and multilingual-e5-base embeddings.</li>
+                                  <li>Layered deterministic safety overrides on top of an OpenRouter LLM to guard against unsafe triage recommendations.</li>
+                                  <li>Iteratively fixed Streamlit UI issues including invisible inputs and HTML widget incompatibilities.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">PediTriage</h4>
-                        <span class="category">Bilingual (English/Arabic) Pediatric Symptom Triage — RAG + Streamlit + ChromaDB</span>
                       </figure>
 
                       <!-- GAF-Net -->
                       <figure class="item standard" data-groups='["category_all", "Research", "AI/ML"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/gaf-net.jpg" alt="GAF-Net" title="">
-                          <a href="https://github.com/anuragnayak01/Face_verification_Framework" target="_blank" title="GAF-Net Research Paper"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#2a1a3a,#1c2140);">
+                              <div class="project-front-gradient"><i class="fa fa-user-circle" style="font-size:56pt;color:rgba(145,94,255,.55);"></i></div>
+                              <div class="inner">
+                                <p>Age-Invariant Face Verification (GAF-Net)</p>
+                                <span>dlib | ArcFace | FaceNet | SHAP</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/Face_verification_Framework" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Researched a bidirectional SAM age-transformation pipeline for face verification across MORPH-2, FG-NET, and AgeDB-30 datasets.</li>
+                                  <li>Fused ArcFace, FaceNet, VGGFace, LPIPS, and SSIM similarity scores via logistic regression with a Neyman-Pearson 3-class decision rule.</li>
+                                  <li>Ran reviewer-grade experiments including fusion-method comparisons, significance testing, SHAP importance, and domain adaptation.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">GAF-Net</h4>
-                        <span class="category">Research Paper — Age-Invariant Face Verification (ArcFace, FaceNet, SHAP)</span>
                       </figure>
 
                       <!-- Pan-Cancer Multi-Omics Survival Prediction -->
                       <figure class="item standard" data-groups='["category_all", "Research", "Data"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/pancancer.jpg" alt="Pan-Cancer Multi-Omics Survival Prediction" title="">
-                          <a href="https://github.com/anuragnayak01/pan-cancer-multiomics-survival" target="_blank" title="Pan-Cancer Multi-Omics Survival Prediction"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#1c2140,#241a3a);">
+                              <div class="project-front-gradient"><i class="fa fa-dna" style="font-size:56pt;color:rgba(242,114,200,.55);"></i></div>
+                              <div class="inner">
+                                <p>Pan-Cancer Multi-Omics Survival Prediction</p>
+                                <span>TCGA | MOFA+ | Nash-MTL | SHAP</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/pan-cancer-multiomics-survival" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a multi-omics survival prediction pipeline on TCGA data, integrating modalities with MOFA+ factor analysis.</li>
+                                  <li>Applied Nash-MTL multi-task optimization to balance competing cancer-subtype objectives during training.</li>
+                                  <li>Used SHAP to interpret which multi-omics features drove survival predictions for each cancer type.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Pan-Cancer Multi-Omics Survival Prediction</h4>
-                        <span class="category">TCGA multi-omics survival pipeline with MOFA+, Nash-MTL and SHAP</span>
                       </figure>
 
                       <!-- SoilPFN -->
                       <figure class="item standard" data-groups='["category_all", "Research"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/soilpfn.jpg" alt="SoilPFN" title="">
-                          <a href="https://github.com/anuragnayak01" title="SoilPFN Research Paper"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/soilpfn.jpg);">
+                              <div class="inner">
+                                <p>SoilPFN</p>
+                                <span>PLS-Conditioned TabPFN for MIR Soil Spectroscopy</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Research paper combining PLS dimensionality reduction with a conditioned TabPFN model for MIR soil spectroscopy.</li>
+                                  <li>Submitted to JSIR (Journal of Scientific &amp; Industrial Research).</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">SoilPFN</h4>
-                        <span class="category">Research Paper — PLS-Conditioned TabPFN for MIR Soil Spectroscopy (JSIR)</span>
                       </figure>
 
                       <!-- The Pitch Visualizer -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Full Stack"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/pitch-visualizer.jpg" alt="The Pitch Visualizer" title="">
-                          <a href="https://github.com/anuragnayak01/The-Pitch-Visualizer" target="_blank" title="The Pitch Visualizer"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#241a3a,#1c2140);">
+                              <div class="project-front-gradient"><i class="fa fa-picture-o" style="font-size:56pt;color:rgba(145,94,255,.55);"></i></div>
+                              <div class="inner">
+                                <p>The Pitch Visualizer</p>
+                                <span>FastAPI | Pollinations.ai | Render</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/The-Pitch-Visualizer" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a FastAPI storyboard generator that turns a written pitch into a sequence of illustrative visuals.</li>
+                                  <li>Swapped in Pollinations.ai for image generation to remove dependency on paid APIs, then deployed the app on Render.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">The Pitch Visualizer</h4>
-                        <span class="category">FastAPI storyboard generator using Pollinations.ai, deployed on Render</span>
                       </figure>
 
                       <!-- VaultAI -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Full Stack"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/vaultai.jpg" alt="VaultAI" title="">
-                          <a href="https://github.com/anuragnayak01/Vaultai" target="_blank" title="VaultAI - Project Knowledge Vault"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#1c2140,#1a2438);">
+                              <div class="project-front-gradient"><i class="fa fa-lock" style="font-size:56pt;color:rgba(94,145,255,.55);"></i></div>
+                              <div class="inner">
+                                <p>VaultAI — Project Knowledge Vault</p>
+                                <span>JavaScript | Full-Stack</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/Vaultai" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a personal knowledge-vault platform for organizing project documentation, design docs, and research notes across multiple ML projects.</li>
+                                  <li>Used as the backing store for design documents and technical specs (e.g. the USSN v2 architecture doc) referenced by project ID across other repos.</li>
+                                  <li>Structured around per-project workspaces so notes, docs, and artifacts stay organized as work spans multiple concurrent projects.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">VaultAI — Project Knowledge Vault</h4>
-                        <span class="category">Personal knowledge-vault for project docs, design specs and research notes</span>
                       </figure>
 
                       <!-- Sports Tracker -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous", "Data"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/sports-tracker.jpg" alt="Sports Tracker" title="">
-                          <a href="https://github.com/anuragnayak01/sports-tracker" target="_blank" title="Sports Tracker"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background:linear-gradient(135deg,#1a2438,#241a3a);">
+                              <div class="project-front-gradient"><i class="fa fa-trophy" style="font-size:56pt;color:rgba(242,114,200,.55);"></i></div>
+                              <div class="inner">
+                                <p>Sports Tracker</p>
+                                <span>Python</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01/sports-tracker" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a Python tool to fetch and track live sports scores, standings, and stats across matches.</li>
+                                  <li>Structured around a clean data-fetching pipeline for keeping tabs on ongoing games and results.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">Sports Tracker</h4>
-                        <span class="category">Python tool to fetch and track live sports scores, standings and stats</span>
                       </figure>
 
                       <!-- LinkedIn JobRadar -->
                       <figure class="item standard" data-groups='["category_all", "Miscellaneous"]'>
-                        <div class="portfolio-item-img">
-                          <img src="images/jobradar.jpg" alt="LinkedIn JobRadar" title="">
-                          <a href="https://github.com/anuragnayak01" title="LinkedIn JobRadar"></a>
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="project-container">
+                            <div class="front" style="background-image:url(images/jobradar.jpg);">
+                              <div class="inner">
+                                <p>LinkedIn JobRadar</p>
+                                <span>Python / Playwright Job Scraper (v4)</span>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="portfolio-links">
+                                <a href="https://github.com/anuragnayak01" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                              </div>
+                              <div class="list">
+                                <ul>
+                                  <li>Built a Playwright-based scraper that watches LinkedIn job listings matching a set of saved search criteria.</li>
+                                  <li>Now on v4 after iterating on selector stability and rate-limit handling.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4 class="name">LinkedIn JobRadar</h4>
-                        <span class="category">Python / Playwright Job Scraper (v4)</span>
                       </figure>
 
                     </div>
