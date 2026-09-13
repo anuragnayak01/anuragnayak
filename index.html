@@ -17,17 +17,25 @@
   <link rel="stylesheet" href="css/main.css" type="text/css">
 
   <script src="js/modernizr.custom.js"></script>
-  <style>
+ <style>
 .shine-text {
-  background: linear-gradient(90deg, #00ffff 0%, #ffffff 50%, #00ffff 100%);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  background: linear-gradient(90deg, #00ffff 0%, #ffffff 50%, #00ffff 100%) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
   animation: shine 3s linear infinite;
+  display: inline-block;
 }
 @keyframes shine {
   to { background-position: 200% center; }
+}
+
+#site_header,
+.page-content,
+.content-area {
+  background-color: #1a1a1a !important;
 }
 </style>
  
@@ -50,12 +58,14 @@
     <div class="page-content">
       <header id="site_header" class="header mobile-menu-hide">
         <div class="header-content">
-          <div class="header-photo" style="width: 220px !important; height: 220px !important;">
-            <img src="images/personal_pic.jpg" alt="Anurag Nayak" style="width: 100% !important; height: 100% !important; object-fit: cover !important;">
-          </div>
+          <div class="header-photo">
+
+  
+          <img src="images/personal_pic.jpg" alt="Anurag Nayak" style="width: 220px; height: 220px; object-fit: cover;">
+        </div>
           <div class="header-titles">
             
-            <h4 class="shine-text">B.Tech CSE (Data Science &amp; Analytics)<br>IIIT Nagpur</h4>
+            <h4 class="shine-text">B.Tech CSE <br>(Data Science &amp; Analytics)<br>IIIT Nagpur</h4>
           </div>
         </div>
 
