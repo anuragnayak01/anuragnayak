@@ -17,6 +17,38 @@
   <link rel="stylesheet" href="css/main.css" type="text/css">
 
   <script src="js/modernizr.custom.js"></script>
+  <style>
+.shine-text {
+  background: linear-gradient(90deg, #00ffff 0%, #ffffff 50%, #00ffff 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+</style>
+  <style>
+.shine-text {
+  background: linear-gradient(90deg, #00ffff 0%, #ffffff 50%, #00ffff 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+#site_header,
+.page-content,
+.content-area {
+  background-color: #1a1a1a !important;
+}
+</style>
 </head>
 
 <body>
@@ -39,11 +71,12 @@
           <div class="header-photo">
 
             
-            <img src="images/personal_pic.jpg" alt="Anurag Nayak">
+              <img src="images/personal_pic.jpg" alt="Anurag Nayak" style="width: 220px; height: 220px; object-fit: cover;">
+
           </div>
           <div class="header-titles">
-            <h2 style="color:aqua;">Anurag Nayak</h2>
-            <h4>B.Tech CSE (Data Science &amp; Analytics), IIIT Nagpur</h4>
+            
+            <h4 class="shine-text">B.Tech CSE (Data Science &amp; Analytics)<br>IIIT Nagpur</h4>
           </div>
         </div>
 
@@ -97,10 +130,8 @@
           </ul>
         </div>
 
-        <div class="header-buttons">
-          <a href="resume.pdf" target="_blank" class="btn btn-primary">Download CV</a>
-        </div>
-        <div class="copyrights">© 2026 All rights reserved <br> Last updated on 06-09-2026.</div>
+        
+        <div class="copyrights">© 2026 All rights reserved </div>
       </header>
 
       <!-- Mobile Navigation -->
