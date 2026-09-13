@@ -249,38 +249,60 @@
   text-shadow: none;
   background: none;
 }
+/* NUCLEAR RESET: this theme's own main.css already defines a
+   `.portfolio-links` class (a leftover corner-badge overlay from
+   the stock template) with its own position/width/height/background.
+   Wiping every property first with `all: unset !important` makes
+   it impossible for that rule to leak through, regardless of its
+   specificity — then we rebuild the pill design from a clean slate. */
+.portfolio-grid .project-container .back .portfolio-links,
+.portfolio-grid .project-container .back .portfolio-links a,
+.portfolio-grid .project-container .back .portfolio-links a i,
+.portfolio-grid .project-container .back .portfolio-links a span {
+  all: unset !important;
+}
 .portfolio-grid .project-container .back .portfolio-links {
-  margin-bottom: 12px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  display: flex !important;
+  position: static !important;
+  margin-bottom: 12px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 .portfolio-grid .project-container .back .portfolio-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
+  display: inline-flex !important;
+  position: static !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
   color: #00ffff !important;
   background-color: rgba(0,255,255,0.08) !important;
-  background-image: none !important;
-  border: 1px solid rgba(0,255,255,0.45);
-  border-radius: 30px;
-  padding: 7px 16px;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .3px;
+  border: 1px solid rgba(0,255,255,0.45) !important;
+  border-radius: 30px !important;
+  padding: 7px 16px !important;
+  margin: 0 !important;
+  font-size: .78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .3px !important;
   text-decoration: none !important;
-  line-height: 1;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
   transition: background .25s ease, box-shadow .25s ease, transform .25s ease, color .25s ease;
 }
 .portfolio-grid .project-container .back .portfolio-links a i {
-  font-size: .85rem;
-  font-style: normal;
+  display: inline-block !important;
+  font-size: .85rem !important;
+  font-style: normal !important;
   color: inherit !important;
-  /* Force the actual Font Awesome icon fonts so a stray theme rule
-     targeting `i` elsewhere on the page can't swap in a different
-     icon font (which renders as a blank/mis-colored box). */
+  line-height: 1 !important;
 }
 .portfolio-grid .project-container .back .portfolio-links a i.fab {
   font-family: "Font Awesome 6 Brands" !important;
@@ -289,6 +311,11 @@
 .portfolio-grid .project-container .back .portfolio-links a i.fas {
   font-family: "Font Awesome 6 Free" !important;
   font-weight: 900 !important;
+}
+.portfolio-grid .project-container .back .portfolio-links a span {
+  display: inline !important;
+  color: inherit !important;
+  font: inherit !important;
 }
 .portfolio-grid .project-container .back .portfolio-links a:hover {
   background-color: #00ffff !important;
