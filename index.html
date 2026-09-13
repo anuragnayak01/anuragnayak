@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
   <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <script src="js/modernizr.custom.js"></script>
  <style>
@@ -221,10 +222,15 @@
   font-size: .78rem;
   text-shadow: 0 1px 4px rgba(0,0,0,.8);
 }
+.portfolio-grid .project-container .back,
+.portfolio-grid .project-container .back * {
+  box-sizing: border-box;
+}
 .portfolio-grid .project-container .back {
-  background: #060608;
+  background-color: #060608 !important;
+  background-image: none !important;
   border: 1px solid rgba(0,255,255,0.2);
-  color: #fff;
+  color: #fff !important;
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
@@ -232,6 +238,16 @@
   padding: 20px;
   overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0,0,0,.6), inset 0 0 40px rgba(0,255,255,.03);
+}
+/* Reset any inherited tag-level styling from main.css so nothing
+   (link underlines, list markers, paragraph colors, icon colors)
+   leaks in from the theme's global rules for p / a / i / ul. */
+.portfolio-grid .project-container .back p,
+.portfolio-grid .project-container .back span,
+.portfolio-grid .project-container .back li {
+  color: inherit;
+  text-shadow: none;
+  background: none;
 }
 .portfolio-grid .project-container .back .portfolio-links {
   margin-bottom: 12px;
@@ -245,8 +261,9 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #00ffff;
-  background: rgba(0,255,255,0.08);
+  color: #00ffff !important;
+  background-color: rgba(0,255,255,0.08) !important;
+  background-image: none !important;
   border: 1px solid rgba(0,255,255,0.45);
   border-radius: 30px;
   padding: 7px 16px;
@@ -254,13 +271,27 @@
   font-weight: 700;
   letter-spacing: .3px;
   text-decoration: none !important;
+  line-height: 1;
   transition: background .25s ease, box-shadow .25s ease, transform .25s ease, color .25s ease;
 }
 .portfolio-grid .project-container .back .portfolio-links a i {
   font-size: .85rem;
+  font-style: normal;
+  color: inherit !important;
+  /* Force the actual Font Awesome icon fonts so a stray theme rule
+     targeting `i` elsewhere on the page can't swap in a different
+     icon font (which renders as a blank/mis-colored box). */
+}
+.portfolio-grid .project-container .back .portfolio-links a i.fab {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400 !important;
+}
+.portfolio-grid .project-container .back .portfolio-links a i.fas {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
 }
 .portfolio-grid .project-container .back .portfolio-links a:hover {
-  background: #00ffff;
+  background-color: #00ffff !important;
   color: #060608 !important;
   box-shadow: 0 0 18px rgba(0,255,255,.7);
   transform: translateY(-2px);
@@ -270,11 +301,16 @@
   margin: 0;
   font-size: .76rem;
   line-height: 1.45;
-  color: #eaeaf4;
+  color: #eaeaf4 !important;
   text-align: left;
+  list-style: disc;
 }
 .portfolio-grid .project-container .back .list ul li {
   margin-bottom: 6px;
+  color: inherit;
+}
+.portfolio-grid .project-container .back .list ul li::marker {
+  color: rgba(0,255,255,0.6);
 }
 .portfolio-grid .col:hover .front,
 .portfolio-grid .col.hover .front {
